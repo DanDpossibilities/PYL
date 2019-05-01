@@ -1,0 +1,32 @@
+mat-form-field,
+textarea {
+  width: 100%;
+}
+.edit-goal {
+  margin: 1rem auto;
+}
+.category {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 15px;
+  color: #69f0ae;
+}
+h1 {
+  color: #69F0AE;
+}
+.errors{
+  color: #F1493D;
+}
+button{
+  margin: 1rem auto;
+}
+.danger{
+  background-color: #F1493D;
+}
+/* .login {
+  margin: 1rem auto;
+  background: #424242;
+  color: rgb(254, 254, 254);
+  border-radius: .25rem;
+  padding: .5rem;
+} */

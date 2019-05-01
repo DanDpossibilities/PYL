@@ -1,0 +1,23 @@
+mat-form-field,
+textarea {
+  width: 100%;
+}
+.editGoal {
+  margin: 1rem auto;
+}
+
+/* set these up on the radio buttons */
+.category {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 15px;
+  color: #69f0ae;
+}
+.delete{
+  margin: 1rem auto;
+  background-color: rgb(173, 168, 168);
+}
+/* .category button {
+  margin: 5px;
+  padding-right: 40px;
+} not working when I use flex-direction row */

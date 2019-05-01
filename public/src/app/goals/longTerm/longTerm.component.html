@@ -1,0 +1,30 @@
+<div class="longTerm" *ngIf="pylUser">
+  <h1>Long Term</h1>
+  <div class="center_div" *ngIf="isLoading == true">
+      <mat-spinner></mat-spinner>
+  </div>
+  <mat-accordion multi = "true" *ngIf="goals.length > 0">
+    <mat-expansion-panel *ngFor="let goal of goals">
+      <mat-expansion-panel-header class='goalTitle'>
+        <!-- {{ goal | json }}   allows us to see the format -->
+        {{ goal.title }}
+      </mat-expansion-panel-header>
+      <ul>
+          <li>{{ goal.description }}</li>
+          <li *ngIf="goal.completed == false">__Incomplete__</li>
+          <div *ngIf="goal.sub_goals.length > 0">
+              <ol>
+                <li *ngFor="let subGoal of goal.sub_goals"><a routerLink="/show/{{ goal._id }}">{{goal.title}}</a></li>
+              </ol>
+          </div>
+      </ul>
+      <mat-action-row>
+        <!-- <button mat-button color="primary" routerLink="/create/{{ goal._id }}">NEW Sub-Goal</button> -->
+        <button mat-button color="accent" routerLink="/update/{{ goal._id }}">EDIT</button>
+        <!-- <button mat-button color="warn" routerLink="'/delete/{{ goal._id }}">DELETE</button> -->
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <p class = "info_text mat-body-1" *ngIf = "goals.length == 0">No goals added yet!</p>
+</div>
+

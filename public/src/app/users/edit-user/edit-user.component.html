@@ -1,0 +1,72 @@
+<div class="edit-goal">
+  <mat-card *ngIf="pylUser">
+    <div class = "errors" *ngIf="problems.length > 0">
+      <h3 *ngFor = "let x of problems">
+          <h3>{{ x }}</h3>
+      </h3>
+    </div>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form *ngIf="!isLoading" (submit)="onEditUser(postForm)" #postForm = "ngForm">
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          name = "first_name"
+          ngModel
+          required
+          minlength="3"
+          placeholder="First Name"
+          #first_name = "ngModel">
+          <mat-error *ngIf="first_name">Please enter a first name with 3 or more characters.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          name = "last_name"
+          ngModel
+          required
+          minlength="3"
+          placeholder="Last Name"
+          #last_name = "ngModel">
+          <mat-error *ngIf="last_name">Please enter a valid email.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="email"
+          name = "email"
+          ngModel
+          required
+          email
+          minlength="3"
+          placeholder="Email"
+          #email = "ngModel">
+          <mat-error *ngIf="email.invalid">Please enter a valid email.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type = "password"
+          name = "password"
+          ngModel
+          required
+          minlength="6"
+          placeholder="Password"
+          #password = "ngModel">
+        <mat-error *ngIf="password.invalid">Please enter password with at least 6 characters.</mat-error>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="accent"
+        type="submit">Save Changes</button>
+    </form>
+    <button
+        name="onDeleteUser"
+        class = "danger"
+        mat-raised-button
+        color="accent"
+        (click)="onDeleteUser()">Delete User</button>
+        <!-- routerLink="/destroy_user">Delete User</button> -->
+  </mat-card>
+</div>

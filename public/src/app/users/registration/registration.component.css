@@ -1,0 +1,15 @@
+.registration {
+  margin: 1rem auto;
+  background: #424242;
+  color: #69f0ae;
+  border-radius: .25rem;
+  padding: .5rem;
+}
+button {
+  border: 1px solid #69F0AE;
+  background: #69F0AE;
+  color: #424242;
+}
+.errors{
+  color: #F1493D;
+}

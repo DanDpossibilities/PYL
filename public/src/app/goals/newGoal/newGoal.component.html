@@ -1,0 +1,71 @@
+<div class="new-goal" *ngIf="pylUser">
+  <h1>Add a New Goal</h1>
+  <mat-card>
+    <div class = "errors" *ngIf="problems.length > 0">
+      <h3 *ngFor = "let x of problems">
+          <h3>{{ x }}</h3>
+      </h3>
+    </div>
+    <form (submit)="onGoal(postForm)" #postForm = "ngForm">
+      <!-- <mat-form-field>
+        <input -->
+        <mat-radio-group
+          matInput
+          type ='text'
+          name="category"
+          class="category"
+          placeholder = "category"
+          ngModel
+          #category = "ngModel"
+          aria-label="Select an option">
+          <mat-radio-button class="category-button" value="daily">Daily</mat-radio-button>
+          <mat-radio-button class="category-button" value="weekly">Weekly</mat-radio-button>
+          <mat-radio-button class="category-button" value="monthly">Monthly</mat-radio-button>
+          <mat-radio-button class="category-button" value="longTerm">Long Term</mat-radio-button>
+        </mat-radio-group>
+      <!-- </mat-form-field> -->
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          name = "title"
+          ngModel
+          required
+          minlength="3"
+          placeholder="Title"
+          #title = "ngModel">
+          <mat-error *ngIf="title.invalid">Please enter a goal title with at least 3 characters.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea
+          matInput rows="6"
+          type="text"
+          name = "description"
+          ngModel
+          required
+          minlength="3"
+          placeholder="Your goal description"
+          #description = "ngModel">
+        </textarea>
+        <mat-error *ngIf="description.invalid">Please enter a description with at least 3 characters.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="date"
+          name = "due_date"
+          ngModel
+          required
+          minlength="3"
+          placeholder="Date Due"
+          #due_date = "ngModel">
+          <mat-error *ngIf="due_date.invalid">Please enter a date this goal is due.</mat-error>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="accent"
+        type="submit">Save goal</button>
+    </form>
+    <!-- button to add sub-goals to an array -->
+  </mat-card>
+</div>

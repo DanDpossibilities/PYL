@@ -1,0 +1,42 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+    <a class="navbar-brand" routerLink="/pyl_about">PYL</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/currentGoal">Current Goal</a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categories
+          </a>
+          <div class="dropdown-menu  categories" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/daily">Daily Goals</a>
+            <a class="dropdown-item" routerLink="/weekly">Weekly Goals</a>
+            <a class="dropdown-item" routerLink="/monthly">Monthly Goals</a>
+            <a class="dropdown-item" routerLink="/longTerm">Long Term Goals</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/edit_user">Edit your account info</a>
+            <!-- <a class="dropdown-item" routerLink="/tomorrow">Set Goals For Tomorrow</a> -->
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="newGoal" tabindex="-1" aria-="true">Make a New Goal</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn my-2 my-sm-0" type="submit">Search</button> When ready for the search tree, reimplement -->
+        <a class="btn my-2 my-sm-0 " routerLink="/">Login</a>
+        <a class="btn my-2 my-sm-0 logout" onClick="sessionStorage.clear()" routerLink="/">Logout</a>
+      </form>
+    </div>
+  </nav>
+</div>

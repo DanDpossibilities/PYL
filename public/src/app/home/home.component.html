@@ -1,0 +1,14 @@
+<div style="text-align:center" *ngIf="pylUser">
+  <mat-spinner *ngIf="isLoading == true"></mat-spinner>
+  <h1>Welcome to {{ title }}!</h1>
+  <h2>All of your goals for today:</h2>
+  <ul>
+    <li *ngFor='let goal of goals'>{{ goal.title }}</li>
+  </ul>
+<!-- <app-currentGoal></app-currentGoal> -->
+<app-daily></app-daily>
+<app-weekly></app-weekly>
+<app-monthly></app-monthly>
+<app-longTerm></app-longTerm>
+
+</div>

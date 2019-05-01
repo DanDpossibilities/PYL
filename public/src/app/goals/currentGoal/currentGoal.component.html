@@ -1,0 +1,35 @@
+<div class="new-goal" *ngIf="pylUser">
+    <div class="currentGoal">
+      <mat-accordion> <!--(take out of comment later) multi = "true" *ngIf="goals.length > 0"> -->
+        <mat-expansion-panel> <!-- *ngFor="let goal of goals"> -->
+          <mat-expansion-panel-header>
+            <h1>Current</h1>
+            <!-- {{ goal.title | json }}   allows us to see the format -->
+            <!-- {{ goal.title }} -->
+          </mat-expansion-panel-header>
+          <!-- <p>{{ goal.content | json }}</p> -->
+          <!-- <p>{{ goal.content }}</p> -->
+          <!-- completed default false but a true checkbox do I use checked value or value = true -->
+          <!-- <mat-form-field> -->
+            <section class="completed">
+              <mat-checkbox
+                checked = "false"
+                name = "completed"
+                class="completed-checkbox"
+                ngModel
+                #completed = "ngModel"
+                value = "true">Goal Complete!</mat-checkbox>
+            </section>
+            <!-- </mat-form-field> do I loop this complete checkbox per each task?-->
+          <mat-action-row>
+            <button mat-button color="primary">NEW Sub-Goal</button>
+            <button mat-button color="accent">EDIT</button> <!-- no functionality for these buttons yet -->
+            <button mat-button color="warn">DELETE</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <!-- <p class = "info_text mat-body-1" *ngIf = "goals.length == 0">No goals added yet!</p> -->
+    </div>
+  </div>
+
+

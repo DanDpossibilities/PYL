@@ -1,0 +1,19 @@
+button {
+  margin: 1rem auto;
+  background: #69F0AE;
+  color: #424242;
+}
+mat-form-field,
+textarea {
+  width: 100%;
+}
+.login {
+  margin: 1rem auto;
+  background: #424242;
+  color: rgb(254, 254, 254);
+  border-radius: .25rem;
+  padding: .5rem;
+}
+.errors{
+  color: #F1493D;
+}

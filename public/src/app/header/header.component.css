@@ -1,0 +1,14 @@
+.container a {
+  color: #69f0ae;
+}
+button {
+  background:#69f0ae;
+}
+.logout {
+  margin-left: 1rem;
+  background: #F1493D;
+  color: #242424 !important;
+}
+.categories a {
+  color: #242424;
+}

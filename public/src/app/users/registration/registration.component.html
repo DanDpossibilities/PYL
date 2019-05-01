@@ -1,0 +1,102 @@
+<!-- tip to easily see objects printed in full instead of [object Object]
+<%- JSON.stringify(messages) %>
+based on the structure of your messages, determine how to display them
+<% if(messages.registration) { %>
+    <% for (var x of messages.registration) { %>
+        <h3><%= x %></h3>
+    <% } %>
+<% } %> -->
+<div class = 'registration'*ngIf="!pylUser">
+  <!-- based on the structure of your messages, determine how to display them -->
+  <div class = "errors" *ngIf="errors.length > 0">
+      <h3 *ngFor = "let x of errors">
+          <h3>{{ x }}</h3>
+      </h3>
+    </div>
+  <h1>Registration</h1>
+  <form class="needs-validation" (submit)="onAddUser(postForm)" #postForm = "ngForm">
+      <div class="row">
+          <div class="col">
+            <label for="first_name">First Name</label>
+            <!-- type="text" or type='type' -->
+            <!-- id="validationDefault03" -->
+            <!-- fix bootstrap validation to match server validation -->
+            <input
+              name='first_name'
+              ngModel
+              required
+              min-length="3"
+              class="form-control"
+              id="first_name"
+              placeholder="First name"
+              #first_name = "ngModel">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please provide a First Name with 3 or more characters.
+            </div>
+          </div>
+          <div class="col">
+            <label for="last_name">Last Name</label>
+            <input
+              name='last_name'
+              ngModel
+              required
+              min-length="3"
+              class="form-control"
+              id="last_name"
+              placeholder="Last name"
+              #last_name = "ngModel">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please provide a Last Name with 3 or more characters.
+            </div>
+          </div>
+      </div>
+      <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input
+              type="email"
+              name='email'
+              ngModel
+              required
+              class="form-control"
+              id="inputEmail4"
+              placeholder="Email"
+              #email = "ngModel">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please provide a valid email.
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <input
+              type="password"
+              name='password'
+              ngModel
+              required
+              class="form-control"
+              id="inputPassword4"
+              placeholder="Password"
+              #password = "ngModel">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please provide a password with 6 or more characters.
+            </div>
+          </div>
+      </div>
+      <button type="submit" class="btn">Sign in</button>
+  </form>
+  <br />
+  <button routerLink="/" class="btn">Already a Member? Login here.</button>
+</div>
+

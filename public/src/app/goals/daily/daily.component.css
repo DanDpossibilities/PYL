@@ -1,0 +1,19 @@
+.daily {
+  margin: 1rem auto;
+}
+button{
+  background-color: rgb(173, 168, 168);
+}
+h1 {
+  color: #69F0AE;
+}
+.daily li {
+  text-align: left;
+  font-size: 20px;
+  color: #69F0AE;
+}
+.goalTitle{
+  text-align: left;
+  font-size: 20px;
+  color: #69F0AE;
+}

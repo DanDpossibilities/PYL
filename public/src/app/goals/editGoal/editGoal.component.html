@@ -1,0 +1,85 @@
+<div class="new-goal">
+  <h1>Edit Your Goal</h1>
+  <mat-card>
+    <div class = "errors" *ngIf="problems.length > 0">
+      <h3 *ngFor = "let x of problems">
+          <h3>{{ x }}</h3>
+      </h3>
+    </div>
+    <form (submit)="onEditGoal()">
+        <mat-radio-group
+          matInput
+          type="radio"
+          name="category"
+          class="category"
+          required
+          [(ngModel)] = "goalData.category"
+          aria-label="Select an option">
+
+          <mat-radio-button class="category-button" value="daily" *ngIf="goalData.category != 'daily'">Daily</mat-radio-button>
+          <mat-radio-button class="category-button" value="daily" checked *ngIf="goalData.category == 'daily'">Daily</mat-radio-button>
+          <mat-radio-button class="category-button" value="weekly" *ngIf="goalData.category != 'weekly'">Weekly</mat-radio-button>
+          <mat-radio-button class="category-button" value="weekly" checked *ngIf="goalData.category == 'weekly'">Weekly</mat-radio-button>
+          <mat-radio-button class="category-button" value="monthly" checked *ngIf="goalData.category == 'monthly'">monthly</mat-radio-button>
+          <mat-radio-button class="category-button" value="monthly" *ngIf="goalData.category != 'monthly'">monthly</mat-radio-button>
+          <mat-radio-button class="category-button" value="longTerm" *ngIf="goalData.category != 'longTerm'">Long Term</mat-radio-button>
+          <mat-radio-button class="category-button" value="longTerm" checked *ngIf="goalData.category == 'longTerm'">Long Term</mat-radio-button>
+        </mat-radio-group>
+      <!-- </mat-form-field> -->
+      <mat-form-field>
+        <input
+          matInput
+          type="type"
+          name = "title"
+          required
+          minlength="3"
+          value="{{ goalData.title }}"
+          [(ngModel)] = "goalData.title">
+          <!-- <mat-error *ngIf="title.invalid">Please enter a goal title with at least 3 characters.</mat-error> -->
+      </mat-form-field>
+      <mat-form-field>
+        <textarea
+          matInput rows="6"
+          name = "description"
+          ngModel
+          required
+          minlength="3"
+          value="{{ goalData.description }}"
+          [(ngModel)] = "goalData.description">
+        </textarea>
+        <!-- <mat-error *ngIf="description.invalid">Please enter a description with at least 3 characters.</mat-error> -->
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="date"
+          name = "due_date"
+          ngModel
+          required
+          minlength="3"
+          value="{{ goalData.due_date }}"
+          [(ngModel)] = "goalData.due_date">
+          <!-- <mat-error *ngIf="due_date.invalid">Please enter a date this goal is due.</mat-error> -->
+      </mat-form-field>
+      <!-- completed default false but a true checkbox do I use checked value or value = true -->
+      <!-- <mat-form-field> -->
+        <!-- fix this completed checkbox to be false when not clicked -->
+        <section class="completed">
+          <mat-checkbox
+            name = "completed"
+            class="completed-checkbox"
+            checked = "{{ !(goalData.completed) }}"
+            [(ngModel)] = "goalData.completed">Goal Complete!</mat-checkbox>
+        </section>
+        <!-- </mat-form-field> -->
+      <!-- due date defaulted to none or to category timeline -->
+      <button
+        mat-raised-button
+        color="accent"
+        type="submit">Save goal</button>
+    </form>
+    <button mat-button color="warn" class='delete' (click)="onDeleteGoal()">DELETE</button>
+    <!-- button to add sub-goals to an array -->
+  </mat-card>
+</div>
+
